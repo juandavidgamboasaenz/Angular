@@ -1,40 +1,11 @@
-<ul>
-    <!-- Ciclo for para diversos datos desde TypeScript app.component.ts-->
-        <app-user   *ngFor = "let user of users" [nameUser] = "user"></app-user>
-</ul>
+<mat-toolbar color="primary">
+    <h1>
+      Departamentos 
+    </h1>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/about">About</button>
+  
+</mat-toolbar>
 
-    <!-- Imprimo los nombres y sus respectivos datos desde app.component.ts-->
-<div>
-    <p>Name: {{ name }}.</p>
-    <p>Street: {{ address.street }}.</p>
-    <p>City: {{ address.city }}.</p>
-    <p>Country: {{ address.country }}.</p>
-    <ul>
-        <li *ngFor = "let hobby of hobbies">
-            {{ hobby }}
-
-        </li>
-    </ul>
-</div>
-    <!-- EVENTOS -->
-<div>
-    <ul>
-        <li *ngFor = "let user of users">{{ user }} 
-            <button (click) = "deleteUser(user)">
-                X
-            </button>
-        </li>
-    </ul>
-    <!-- acá añadimos un evento al botón es un metodo para ejecutar algúna funcion-->
-    <button (click)= "sayHello()">
-        Click me!
-    </button>
-</div>
-<div>
-    <form (submit)= "addUser(newUser)">
-        <input type="text" #newUser>
-        <button type="button">
-            Send user
-        </button>
-    </form>
-</div>
+  
+<router-outlet></router-outlet>
